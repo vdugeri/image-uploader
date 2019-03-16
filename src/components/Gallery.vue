@@ -1,26 +1,29 @@
 <template>
   <div class="gallery">
-    <Photo :src="pic" />
-    <Photo :src="pic" />
-    <Photo :src="pic" />
-    <Photo :src="pic" />
-    <Photo :src="pic" />
-    <Photo :src="pic" />
+    <Photo v-for="pic in photos" :key="pic.id" :src="pic.url" />
   </div>
 </template>
 
 <script>
-import pic from "@/assets/image.jpg";
 import Photo from "@/components/Photo";
+import { mapState, mapActions } from "vuex";
 
 export default {
   components: {
     Photo
   },
-  data() {
-    return {
-      pic
-    };
+  mounted() {
+    this.fetchPhotos();
+  },
+  computed: {
+    ...mapState({
+      photos: state => state.photos
+    })
+  },
+  methods: {
+    ...mapActions({
+      fetchPhotos: "fetchPhotos"
+    })
   }
 };
 </script>
@@ -28,8 +31,8 @@ export default {
 <style lang="scss">
 .gallery {
   display: flex;
-  align-content: space-between;
-  justify-content: space-between;
+  align-content: space-around;
+  justify-content: space-around;
   flex-wrap: wrap;
   padding: 0 1rem;
 }

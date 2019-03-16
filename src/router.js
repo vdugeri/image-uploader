@@ -15,11 +15,6 @@ export default new Router({
       name: "about",
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
-    },
-    {
-      path: "/upload",
-      name: "upload",
-      component: () => import("./views/Upload.vue")
     }
   ]
 });

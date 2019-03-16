@@ -17,7 +17,7 @@ $color-white: #fff;
 .image {
   box-shadow: 0 1rem 3rem rgba($color-black, 0.14);
   &__photo {
-    height: 30rem;
+    height: 60rem;
     width: auto;
     transition: all 0.3s;
     outline: 4px solid $color-white;

@@ -10,6 +10,5 @@ export let uploadImage = async file => {
   formData.append("upload_preset", "sample-uploader");
 
   const response = await axios.post(endpoint, formData);
-
   return response.data;
 };

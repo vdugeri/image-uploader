@@ -5,10 +5,10 @@
         <router-link to="/upload">Upload</router-link>
       </li>
       <li class="navbar__nav-item">
-        <a href="#">About</a>
+        <router-link to="/about">About</router-link>
       </li>
       <li class="navbar__nav-item">
-        <a href="#">Home</a>
+        <router-link to="/">Home</router-link>
       </li>
     </ul>
   </section>
